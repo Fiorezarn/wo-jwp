@@ -31,6 +31,7 @@ Route::post('/katalog/update/{id}', [MainController::class, 'updateKatalog'])->n
 Route::get('/katalog/delete/{id}', [MainController::class, 'deleteKatalog'])->name('deleteKatalog');
 Route::get('/pesanan', [MainController::class, 'pesanan'])->name('pesanan');
 Route::post('/update-status/{id}', [MainController::class, 'updateStatus']);
+Route::get('/pesanan/delete/{id}', [MainController::class, 'deletePesanan'])->name('deletePesanan');
 Route::get('/laporan', [MainController::class, 'laporanPage'])->name('laporan');
 Route::get('/detailkatalog/{id}', [MainController::class, 'detailKatalog']);
 Route::post('/addpesanan', [MainController::class, 'addPesanan'])->name('addPesanan');

@@ -150,6 +150,13 @@ class MainController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function deletePesanan($id)
+    {
+
+        $this->pesanan->deleteData($id);
+        return redirect()->route('pesanan')->with('pesan', 'Data Berhasil Di Hapus !!');
+    }
+
     public function laporanPage()
     {
         $data = DB::table('pesanan as p')
