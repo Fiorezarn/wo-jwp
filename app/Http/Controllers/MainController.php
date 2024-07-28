@@ -147,7 +147,8 @@ class MainController extends Controller
     public function updateStatus(Request $request, $id)
     {
         $data = [
-            'status' => $request->status
+            'status' => $request->status,
+            'updated_at' => $request->now()
         ];
         $this->pesanan->editData($id, $data);
         return response()->json(['success' => true]);
@@ -185,7 +186,7 @@ class MainController extends Controller
             'email' => Request()->email,
             'id_katalog' => Request()->id_katalog,
             'total_harga' => Request()->total_harga,
-            'tanggal' => now(),
+            'created_at' => now(),
         ];
         $this->pesanan->addData($data);
         return redirect()->route('home');

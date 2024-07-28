@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id("id_pesanan");
             $table->string("email");
             $table->string("id_katalog");
             $table->integer("total_harga");
-            $table->timestamps("tanggal");
             $table->string("status")->default("belum dibayar");
             $table->timestamps();
         });
