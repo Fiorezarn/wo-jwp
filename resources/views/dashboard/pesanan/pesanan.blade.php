@@ -91,12 +91,8 @@
                         _token: '{{ csrf_token() }}',
                         status: status
                     },
-                    success: function(response) {
-                        console.log(response);
-                    },
-                    error: function(xhr) {
-                        console.log(xhr.responseText);
-                    }
+                    success: function(response) {},
+                    error: function(xhr) {}
                 });
             });
         });

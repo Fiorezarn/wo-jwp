@@ -144,14 +144,12 @@ class MainController extends Controller
 
     public function laporanPage()
     {
-        // Menjalankan query menggunakan Query Builder Laravel
         $data = DB::table('pesanan as p')
             ->join('katalog as k', 'p.id_katalog', '=', 'k.id_katalog')
             ->select('k.nama_katalog', 'k.gambar', DB::raw('COUNT(p.id_katalog) AS total_pesanan'), DB::raw('SUM(p.total_harga) AS total_harga'))
             ->groupBy('k.nama_katalog', 'k.gambar')
             ->get();
 
-        // Mengirimkan data ke view
         return view('dashboard.laporan.laporan', ['data' => $data]);
     }
 }

@@ -3,39 +3,30 @@
 @section('content')
     <section>
         <div class="bg-black text-white py-20">
-            <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center my-12 md:my-24">
                 <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
                     <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">Welcome!</h1>
-                    <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">JWP WO
-                    </h2>
-                    <p class="text-sm md:text-base text-gray-50 mb-4 text-justify">Selamat datang di WO-JWP, di mana setiap
-                        detail
-                        pernikahan Anda direncanakan dengan sempurna. Kami
+                    <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">JWP WO</h2>
+                    <p class="text-sm md:text-base text-gray-50 mb-4 text-justify">
+                        Selamat datang di WO-JWP, di mana setiap detail pernikahan Anda direncanakan dengan sempurna. Kami
                         memahami bahwa pernikahan adalah momen paling istimewa dalam hidup Anda, dan kami berdedikasi untuk
-                        menjadikannya hari yang tak terlupakan.</p>
+                        menjadikannya hari yang tak terlupakan.
+                    </p>
                     <a href="#"
-                        class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
-                        Explore Now</a>
+                        class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">Explore
+                        Now</a>
                 </div>
-                <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
+                <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-12 md:ml-32 lg:w-2/3 flex justify-end">
                     <div class="h-48 flex flex-wrap content-center">
                         <div>
-                            <img class="inline-block mt-28 xl:block"
-                                src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png">
-                        </div>
-                        <div>
-                            <img class="inline-block mt-24 md:mt-0 p-8 md:p-0"
-                                src="https://user-images.githubusercontent.com/54521023/116969931-bedb0100-acd4-11eb-99a9-ff5e0ee9f31f.png">
-                        </div>
-                        <div>
-                            <img class="inline-block mt-28 lg:block"
-                                src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png">
+                            <img class="inline-block mt-28 w-2/3" src="{{ asset('img/hero.png') }}">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <div class="flex items-center bg-indigo-100 w-screen min-h-screen" style="font-family: 'Muli', sans-serif;">
         <div class="container ml-auto mr-auto flex flex-wrap items-start">
             <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
@@ -62,7 +53,7 @@
                                 <div class="text-lg text-white font-light">
                                     Rp.{{ number_format($item->harga, 0, ',', '.') }}
                                 </div>
-                                <button href="javascript:;"
+                                <a href="javascript:;"
                                     class="rounded-full bg-purple-900 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -70,7 +61,7 @@
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                     </svg>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

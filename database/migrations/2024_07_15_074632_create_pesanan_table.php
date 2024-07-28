@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("email");
             $table->string("id_katalog");
             $table->integer("total_harga");
-            $table->date("tanggal");
+            $table->timestamps("tanggal");
             $table->string("status")->default("belum dibayar");
             $table->timestamps();
         });

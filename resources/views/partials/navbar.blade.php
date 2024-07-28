@@ -7,9 +7,9 @@
             <li><a href="#" class="hover:text-gray-400">Services</a></li>
             <li><a href="#" class="hover:text-gray-400">Contact</a></li>
         </ul>
-        <div class="flex space-x-4">
+        {{-- <div class="flex space-x-4">
             <a href="/login" class="hover:text-gray-400">Login</a>
             <a href="/register" class="hover:text-gray-400">Register</a>
-        </div>
+        </div> --}}
     </div>
 </nav>
