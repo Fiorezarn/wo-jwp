@@ -1,7 +1,6 @@
-<div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modalEditKatalog">
-    <div class="flex
-items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block
-sm:p-0">
+<div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal-edit-{{ $item->id_katalog }}">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4
+    pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 transition-opacity">
             <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
@@ -11,6 +10,7 @@ sm:p-0">
                     @csrf
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div>
+                            <?php echo $item->id_katalog; ?>
                             <label for="nama_katalog" class="block text-sm font-medium text-gray-700">Nama
                                 Katalog</label>
                             <input type="text" name="nama_katalog" id="nama_katalog"
@@ -38,7 +38,7 @@ sm:p-0">
                     </div>
                     <div class="bg-gray-200 px-4 py-3 text-right">
                         <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                            onclick="toggleModalEditkatalog()"><i class="fas fa-times"></i>
+                            onclick="closeModal('modal-edit-{{ $item->id_katalog }}')"><i class="fas fa-times"></i>
                             Batal</button>
                         <button type="submit"
                             class="py-2 px-4 bg-green-500 text-white rounded font-medium hover:bg-blue-700 mr-2 transition duration-500"><i
@@ -50,7 +50,11 @@ sm:p-0">
     </div>
 </div>
 <script>
-    function toggleModalEditkatalog($id) {
-        document.getElementById('modalEditKatalog').classList.toggle('hidden')
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
     }
 </script>

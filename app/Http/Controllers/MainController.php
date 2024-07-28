@@ -67,6 +67,8 @@ class MainController extends Controller
             'deskripsi' => Request()->deskripsi,
             'gambar' => $fileName,
             'harga' => Request()->harga,
+            'created_at' => now()
+
         ];
         $this->katalog->addData($data);
         return redirect()->route('katalog')->with('pesan', 'Data Berhasil Di Tambahkan !!');
@@ -79,7 +81,7 @@ class MainController extends Controller
             'deskripsi' => 'required',
             'harga' => 'required:numeric',
         ], [
-            'title.required' => 'wajib diisi !!',
+            'nama_katalog.required' => 'wajib diisi !!',
             'story.required' => 'wajib diisi !!',
         ]);
 
@@ -88,7 +90,7 @@ class MainController extends Controller
             //jika ingin ganti foto
             //upload photo
             $file = Request()->gambar;
-            $fileName = Request()->title . '.' . $file->extension();
+            $fileName = Request()->nama_katalog . '.' . $file->extension();
             $file->move(public_path('posting_img'), $fileName);
 
             $data = [
@@ -96,6 +98,7 @@ class MainController extends Controller
                 'deskripsi' => Request()->deskripsi,
                 'gambar' => $fileName,
                 'harga' => Request()->harga,
+                'updated_at' => now()
             ];
 
             $this->katalog->editData($id, $data);

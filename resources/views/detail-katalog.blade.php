@@ -65,9 +65,6 @@
                                     value="{{ $katalog->harga }}" placeholder="Masukkan Total Harga" required readonly
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
-                            <div class="mt-4 hidden">
-                                <input type="hidden" name="tanggal" id="tanggal">
-                            </div>
                         </div>
                         <div class="bg-gray-200 px-4 py-3 text-right">
                             <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
@@ -86,12 +83,6 @@
         function toggleModalAddPesanan() {
             document.getElementById('modalAddPesanan').classList.toggle('hidden');
         }
-
-        document.getElementById('pesananForm').addEventListener('submit', function() {
-            const currentDate = new Date().toISOString();
-            console.log("Current Date: ", currentDate); // Debug: log current date
-            document.getElementById('tanggal').value = currentDate;
-        });
     </script>
 
 @endsection
