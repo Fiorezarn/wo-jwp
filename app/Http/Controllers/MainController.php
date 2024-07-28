@@ -14,7 +14,7 @@ class MainController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['katalog', 'index']);
+        $this->middleware('auth')->except(['katalog', 'index', 'detailKatalog', 'addPesanan']);
         $this->katalog = new Katalog();
         $this->pesanan = new Pesanan();
         $this->user = new User();
@@ -124,6 +124,14 @@ class MainController extends Controller
         return redirect()->route('katalog')->with('pesan', 'Data Berhasil Di Hapus !!');
     }
 
+    public function detailKatalog($id)
+    {
+        $data = [
+            'katalog' => $this->katalog->detailData($id)
+        ];
+        return view('detail-katalog', $data);
+    }
+
     public function pesanan()
     {
         $data = [
@@ -151,5 +159,25 @@ class MainController extends Controller
             ->get();
 
         return view('dashboard.laporan.laporan', ['data' => $data]);
+    }
+
+    public function addPesanan()
+    {
+        Request()->validate([
+            'email' => 'required|email',
+            'id_katalog' => 'required',
+            'total_harga' => 'required',
+        ], [
+            'email.required' => 'wajib diisi !!',
+        ]);
+
+        $data = [
+            'email' => Request()->email,
+            'id_katalog' => Request()->id_katalog,
+            'total_harga' => Request()->total_harga,
+            'tanggal' => now(),
+        ];
+        $this->pesanan->addData($data);
+        return redirect()->route('home');
     }
 }

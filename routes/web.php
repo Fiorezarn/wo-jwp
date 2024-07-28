@@ -32,3 +32,5 @@ Route::get('/katalog/delete/{id}', [MainController::class, 'deleteKatalog'])->na
 Route::get('/pesanan', [MainController::class, 'pesanan'])->name('pesanan');
 Route::post('/update-status/{id}', [MainController::class, 'updateStatus']);
 Route::get('/laporan', [MainController::class, 'laporanPage'])->name('laporan');
+Route::get('/detailkatalog/{id}', [MainController::class, 'detailKatalog']);
+Route::post('/addpesanan', [MainController::class, 'addPesanan'])->name('addPesanan');
